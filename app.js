@@ -5,6 +5,9 @@ const bcrypt = require('bcryptjs');
 const app = express();
 const port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
+app.get('/health', (req, res) => {
+    res.status(200).send('OK');
+});
 
 const config = {
    server: process.env.SERVER_DB,
